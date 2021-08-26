@@ -2,6 +2,7 @@
 
 #### This repository contains tasks that are done for the DevOps course
 ## Commands used for task 1:  
+##### Main code at: https://github.com/Akshaya222/Devops
 #### `git init`
 #### `git add .`
 #### `git commit -m "message"`
