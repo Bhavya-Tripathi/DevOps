@@ -27,7 +27,9 @@ Insert the following in that file:
 
 ## STEP 5
 Create an EC2 instance on AWS.   
-[How to create and EC2 instance](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html)
+Create an EC2 instance on AWS.   
+[How to create and EC2 instance](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html) <br>
+Remember while creating the instance, add a custom TCP rule with the port number you have given in your node app. You can also edit the rules afterwards if you haven't added it while creating the instance.
 Use the ssh client to connect to the instance.
 
 ## STEP 6
