@@ -33,7 +33,11 @@ Use the ssh client to connect to the instance.
 
 ## STEP 6
 In your project directory create an inventory called ansible_hosts.  
-Add the following code in the file:  
+`$ cd project_folder` <br>
+`$ touch ansible_hosts` <br>
+
+Now open the ansible_hosts in a text editor and add the following code in the file:  
+(change ansible user to your default user of the ec2 instance you created [Here is a list of default usernames](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html))
 > [nodeserver] <br>
 > PUBLIC IP ADDRESS HERE ansible_user=ubuntu ansible_port=22 ansible_ssh_private_key_file=<GIVE Path to private key file here>
 
