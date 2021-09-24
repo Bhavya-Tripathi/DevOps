@@ -53,6 +53,7 @@ Change the following variables in the playbook:.
 In the "Change the ownership of the directory part" change the owner to the name of your ec2 instance. For me it was `ec2-user`, for you it can be something else if you chose a platform other than Redhat.<br> 
 [Here is a list of default usernames](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)<br>
 In "validating the port is open" task change the port number to the port number you used in your node app.
+In "Download the NodeJs..." task change the path name to the path of your own private repository.
 
 ## STEP 8
 Check if the hostgroup is reachable or not: <br>
