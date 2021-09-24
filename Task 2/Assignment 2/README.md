@@ -57,7 +57,7 @@ In "Download the NodeJs..." task change the path name to the path of your own pr
 
 ## STEP 8
 Check if the hostgroup is reachable or not: <br>
- `$ nodeserver -m ping -i ansible_hosts` <br>
+ `$ ansible nodeserver -m ping -i ansible_hosts` <br>
 Now run the playbook using the following command: <br>
  `$ ansible-playbook gitexample.yml --ask-vault-pass` <br>
 
