@@ -50,10 +50,10 @@ Here [nodeserver] is the name of your hostgroup, you can give it any other name 
 Create an ansible playbook `gitexample.yml`. The playbook is in the article as well as in my repository.
 Change the following variables in the playbook:.
   
-In the "Change the ownership of the directory part" change the owner to the name of your ec2 instance. For me it was `ec2-user`, for you it can be something else if you chose a platform other than Redhat.<br> 
+1. In the "Change the ownership of the directory part" change the owner to the name of your ec2 instance. For me it was `ec2-user`, for you it can be something else if you chose a platform other than Redhat.<br> 
 [Here is a list of default usernames](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)<br>
-In "validating the port is open" task change the port number to the port number you used in your node app.
-In "Download the NodeJs..." task change the path name to the path of your own private repository.
+2. In "validating the port is open" task change the port number to the port number you used in your node app.
+3. In "Download the NodeJs..." task change the path name to the path of your own private repository.
 
 ## STEP 8
 Check if the hostgroup is reachable or not: <br>
