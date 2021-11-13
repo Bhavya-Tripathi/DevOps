@@ -64,7 +64,7 @@ Go to Manage Jenkins -> Manage Plugins -> Available and install plugins for Node
 3. Run the following command to create an environment variable named KUBECONFIG and provide the .kube/config path. Jenkins goes to this path to execute kubectl commands.
 `export KUBECONFIG=~/.kube/config`
 ## Step 6
-1. Create a jenkins pipeline. Add this code in a file named Jenkinsfile. [Source Code](https://github.com/Bhavya-Tripathi/Devops-Jenkins/blob/master/Jenkinsfile)
+1. Create a jenkins pipeline. Add this code in a file named Jenkinsfile. [Source Code](https://github.com/Bhavya-Tripathi/Devops-Jenkins/blob/master/Jenkinsfile) Go to the `~/ .kube` directory and type the command `cat config` to get all the information about the cluster to fill inside the withKubeConfig method in the pipeline. ![cluster details](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Cluster-details.png)
 2. Push this file into the github repository.
 3. Now create a pipeline project in Jenkins. Click on New Item in the dashboard. Put a name of your choice, choose Pipeline and save it.
 4. Go to Build Triggers section and choose Github hook trigger for GITScm polling.
@@ -73,7 +73,7 @@ Go to Manage Jenkins -> Manage Plugins -> Available and install plugins for Node
 7. Opening the public_kubernetes_url:PORT in the browser will give us the output now. ![Browser output](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Browser-op.png)
 8. Since we want to make this pipeline automatically build whenever a commit is made in our repository, we have to use github webhooks.
 9. [Ngrok](https://ngrok.com/download) exposes local servers behind NAts and firewalls to the public internet over secure tunnels.
-10. Run the `ngrok http 8080` command. This command exposes the 8080 port (jenkins) over the public internet and gives us a URL for 8 hours.
+10. Run the `ngrok http 8080` command. This command exposes the 8080 port (jenkins) over the public internet and gives us a URL for 8 hours.![Ngrok](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-ngrok.png)
 11. Copy this URL into github webhooks (Settings -> Webhooks -> Add Webhook) and paste it in the URL section. Append /github-webhook/ to the URL.
 12. Click on add webhook. Now if any change is made that should trigger the event and build the pipeline. 
 ![Build-triggered](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Triggered-build.png) Build #26 is triggered as a new commit is made.
