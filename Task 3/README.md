@@ -15,6 +15,7 @@
 3. Running the command `node server.js` should give the output in the browser at localhost:PORT
 ## Step 2
 1. Create a Dockerfile and put the following code in it to build a docker image. [Source Code](https://github.com/Bhavya-Tripathi/Devops-Jenkins/blob/master/Dockerfile)
+
 ```
 FROM node:15
 WORKDIR /home/bhavya/Desktop
@@ -24,14 +25,15 @@ COPY . .
 EXPOSE 8000
 CMD [ "node", "server.js" ]
 ```
-Where, 15 is the version of Node, WORKDIR tells the working directory of the image, RUN executes the command defined above. EXPOSE informs the container that it needs to open port 8000. CMD stands for command.
-2. Create a .dockerignore file and put `node_modules` in it.
+Where, 15 is the version of Node, WORKDIR tells the working directory of the image, RUN executes the command defined above. EXPOSE informs the container that it needs to open port 8000. CMD stands for command.  
+2. Create a .dockerignore file and put `node_modules` in it.    
 3. Build a Docker image. Run the following command in the project directory.
 `docker build -t <docker username>/nodejs-app .`
-Now check the image using `docker images` command
+![Docker Build](/images/A1-docker-build.png)
+Now check the image using `docker images` command  
 4. Run the image. Running the image with `-d` flag leaves the container running in the background and the `-p` flag redirects a public port to a private port in the container.
 `docker run -p 3000:8000 -d <docker username>/nodejs-app`
-To check if it is running, go to the browser and type URl : `<docker_ip_address:8000>` and you should see the output.
+To check if it is running, go to the browser and type URl : `<docker_ip_address:8000>` and you should see the output.  
 5. Login to docker hub through the command line and push to the docker hub registry.
 `docker push <username>/nodejs-app`
 This pushes to the registry and attaches the latest tag by default.
