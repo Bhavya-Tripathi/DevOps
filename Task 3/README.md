@@ -45,7 +45,7 @@ This pushes to the registry and attaches the latest tag by default.
 3. Then apply the yaml file using kubectl command.
 `kubectl apply -f deployment.yaml`
 The output is:
-[Deployment](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-apply-deployment.png)
+![Deployment](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-apply-deployment.png)
 This creates a pod with one replica and a service file.
 To see the output of the pod run command `minikube service nodejs-service`
 [Minikube service](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-minikube-service.png)  
