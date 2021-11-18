@@ -48,7 +48,7 @@ The output is:
 ![Deployment](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-apply-deployment.png)
 This creates a pod with one replica and a service file.
 To see the output of the pod run command `minikube service nodejs-service`
-[Minikube service](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-minikube-service.png)  
+![Minikube service](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-minikube-service.png)  
 4. To see the pod has been created go the minikube dashboard using command `minikube dashboard`
 ![Minikube dashboard](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-minikube-dashboard.png)
 ## Step 4
@@ -64,18 +64,19 @@ Go to Manage Jenkins -> Manage Plugins -> Available and install plugins for Node
 3. Run the following command to create an environment variable named KUBECONFIG and provide the .kube/config path. Jenkins goes to this path to execute kubectl commands.
 `export KUBECONFIG=~/.kube/config`
 ## Step 6
-1. Create a jenkins pipeline. Add this code in a file named Jenkinsfile. [Source Code](https://github.com/Bhavya-Tripathi/Devops-Jenkins/blob/master/Jenkinsfile) Go to the `~/ .kube` directory and type the command `cat config` to get all the information about the cluster to fill inside the withKubeConfig method in the pipeline. ![cluster details](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Cluster-details.png)
-2. Push this file into the github repository.
-3. Now create a pipeline project in Jenkins. Click on New Item in the dashboard. Put a name of your choice, choose Pipeline and save it.
-4. Go to Build Triggers section and choose Github hook trigger for GITScm polling.
-5. In Pipeline phase choose Pipeline script from SCM and choose the SCM as Git and provide the URL to your github repository. Save this file and check the process by clicking on Build Now.
-6. If you click on the Full Stage View option, it should look like this: ![Full Stage View](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-First-Stage-View.png) 
-7. Opening the public_kubernetes_url:PORT in the browser will give us the output now. ![Browser output](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Browser-op.png)
-8. Since we want to make this pipeline automatically build whenever a commit is made in our repository, we have to use github webhooks.
-9. [Ngrok](https://ngrok.com/download) exposes local servers behind NAts and firewalls to the public internet over secure tunnels.
-10. Run the `ngrok http 8080` command. This command exposes the 8080 port (jenkins) over the public internet and gives us a URL for 8 hours.![Ngrok](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-ngrok.png)
-11. Copy this URL into github webhooks (Settings -> Webhooks -> Add Webhook) and paste it in the URL section. Append /github-webhook/ to the URL.
-12. Click on add webhook. Now if any change is made that should trigger the event and build the pipeline. 
+1. Create a jenkins pipeline. Add this code in a file named Jenkinsfile. [Source Code](https://github.com/Bhavya-Tripathi/Devops-Jenkins/blob/master/Jenkinsfile).   
+2. Go to the `~/ .kube` directory and type the command `cat config` to get all the information about the cluster to fill inside the withKubeConfig method in the pipeline. ![cluster details](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Cluster-details.png)
+3. Push this file into the github repository.
+4. Now create a pipeline project in Jenkins. Click on New Item in the dashboard. Put a name of your choice, choose Pipeline and save it.
+5. Go to Build Triggers section and choose Github hook trigger for GITScm polling.
+6. In Pipeline phase choose Pipeline script from SCM and choose the SCM as Git and provide the URL to your github repository. Save this file and check the process by clicking on Build Now.
+7. If you click on the Full Stage View option, it should look like this: ![Full Stage View](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-First-Stage-View.png) 
+8. Opening the public_kubernetes_url:PORT in the browser will give us the output now. ![Browser output](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Browser-op.png)
+9. Since we want to make this pipeline automatically build whenever a commit is made in our repository, we have to use github webhooks.
+10. [Ngrok](https://ngrok.com/download) exposes local servers behind NAts and firewalls to the public internet over secure tunnels.
+11. Run the `ngrok http 8080` command. This command exposes the 8080 port (jenkins) over the public internet and gives us a URL for 8 hours.![Ngrok](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-ngrok.png)
+12. Copy this URL into github webhooks (Settings -> Webhooks -> Add Webhook) and paste it in the URL section. Append /github-webhook/ to the URL.
+13. Click on add webhook. Now if any change is made that should trigger the event and build the pipeline. 
 ![Build-triggered](https://github.com/Bhavya-Tripathi/DevOps/blob/main/Task%203/images/A1-Triggered-build.png) Build #26 is triggered as a new commit is made.
 
 `
